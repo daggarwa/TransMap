@@ -1,0 +1,62 @@
+<html>
+<head>
+<script src="https://cdn.firebase.com/js/client/2.2.1/firebase.js"></script>
+<style type="text/css">
+html, body { height: 100%; margin: 0; padding: 0; }
+#map { height: 100%; }
+</style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="/home/ibm/Documents/cdn/css/bootstrap.css" type="text/css">
+<link rel="stylesheet" href="/home/ibm/Documents/cdn/css/bootstrap.css.map" type="text/css">
+
+<!-- Load the Firebase library before loading the body. -->
+<script src="https://www.gstatic.com/firebasejs/3.1.0/firebase.js"></script>
+
+<!-- Load the jQuery library, which we'll use to manipulate HTML elements with Javascript. -->
+<script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
+
+<!-- Load Bootstrap stylesheet, which will is CSS that makes everything prettier and also responsive (aka will work on all devices of all sizes). -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+</head>
+
+<body>
+<!-- Load the application script, which will save data to our Firebase app when we click the button. -->
+<script src="TransMap.js"></script>
+<div style="margin:30px">
+
+<div id="map" style="height: 500px ;"></div>
+<script async defer
+src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDGB3-tj4AwqKTmuIZs51aliIALtSLeHgU
+&libraries=visualization&callback=initMap">
+</script>
+</div>
+<div style="margin:30px">
+
+<div class="col-lg-6 col-md-6"  style="border: thin solid black">
+
+<h3>Give Us an Update!</h3>
+
+<form id="recommendationForm">
+
+<div>
+<textarea name="comments" id="comments" style="font-family:sans-serif;font-size:1.2em;" placeholder="Write your comment here!
+">
+</textarea>
+<br/>
+<label>User</label>
+<input type="text" id = "name" placeholder = "your Username"/>
+
+</div>
+<!-- When you click this button, trigger the submit event on this form. -->
+<input type="button" class="btn btn-default"  id = "a1" value = "Comment"/>
+<br/>
+</form>
+</div>
+<div class="col-lg-6 col-md-6"  style="border: thin solid black">
+<h3>Most Recent Updates</h3>
+<p id = "comment1"></p>
+</div>
+</div>
+</body>
+</html>
